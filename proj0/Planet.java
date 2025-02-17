@@ -49,7 +49,7 @@ public class Planet{
     public double calcNetForceExertedByX(Planet[] p){
         double tem=0;
         for(Planet planet:p){
-            if(planet.yyPos!=yyPos&&planet.xxPos!=xxPos)
+            if(planet.yyPos!=yyPos||planet.xxPos!=xxPos)
                 tem+=calcForceExertedByX(planet);
         }
         return tem;
@@ -58,7 +58,7 @@ public class Planet{
     public double calcNetForceExertedByY(Planet[] p){
         double tem=0;
         for(Planet planet:p){
-            if(planet.yyPos!=yyPos&&planet.xxPos!=xxPos)
+            if(planet.yyPos!=yyPos||planet.xxPos!=xxPos)
                 tem+=calcForceExertedByY(planet);
         }
         return tem;
