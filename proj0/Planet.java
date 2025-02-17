@@ -1,6 +1,6 @@
 public class Planet{
 
-    public static final double G=6.67e-11;
+    private static final double G=6.67e-11;
 
     public double xxPos;
     public double yyPos;
@@ -45,14 +45,11 @@ public class Planet{
         return calcForceExertedBy(p)*(p.yyPos-yyPos)/calcDistance(p);
     }
 
-    public boolean equals(Planet p){
-        return (xxPos==p.xxPos && yyPos==p.yyPos);
-    }
 
     public double calcNetForceExertedByX(Planet[] p){
         double tem=0;
         for(Planet planet:p){
-            if(!equals(planet))
+            if(planet.yyPos!=yyPos&&planet.xxPos!=xxPos)
                 tem+=calcForceExertedByX(planet);
         }
         return tem;
@@ -61,7 +58,7 @@ public class Planet{
     public double calcNetForceExertedByY(Planet[] p){
         double tem=0;
         for(Planet planet:p){
-            if(!equals(planet))
+            if(planet.yyPos!=yyPos&&planet.xxPos!=xxPos)
                 tem+=calcForceExertedByY(planet);
         }
         return tem;
